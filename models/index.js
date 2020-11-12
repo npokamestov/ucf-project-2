@@ -39,4 +39,18 @@ Mentor.belongsTo(Language, {
     onDelete: 'SET NULL'
 });
 
+User.belongsToMany(Mentor, {
+    through: Rate,
+    as: 'rated_mentor',
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Mentor.belongsToMany(User, {
+    through: Rate,
+    as: 'rated_mentor',
+    foreignKey: 'mentor_id',
+    onDelete: 'SET NULL'
+});
+
 module.exports = { User, Mentor, Language, Review, Rate };

@@ -1,12 +1,11 @@
+const path = require('path');
 const express = require('express');
+const socket = require('socket.io');
 
-// app setup
 const app = express();
 
-// server
-const server = app.listen(4000, function(){
-    console.log('listening to requests on port 4000');
-});
+app.use(express.static(path.join()));
 
-// static files
-app.use(express.static('public'));
+const PORT = 3000 || process.env.PORT;
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

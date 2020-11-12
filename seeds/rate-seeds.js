@@ -1,6 +1,6 @@
 const { Rate } = require('../models');
 
-const rateData = [
+const ratedata = [
     {
         user_id: 1,
         mentor_id: 6
@@ -27,6 +27,6 @@ const rateData = [
     },
 ];
 
-const seedRates = () => Rate.bulkCreate(rateData);
+const seedRates = () => Rate.bulkCreate(ratedata);
 
 module.exports = seedRates;

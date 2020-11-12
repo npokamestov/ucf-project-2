@@ -1,6 +1,6 @@
 const { Review } = require('../models');
 
-const reviewData = [
+const reviewdata = [
     {
         review_text: 'Weary before there store on back eyes above flung wore, pondered for he more i. Meaninglittle tell my metell the.',
         user_id: 1,
@@ -33,6 +33,6 @@ const reviewData = [
     },
 ];
 
-const seedReviews = () => Review.bulkCreate(reviewData);
+const seedReviews = () => Review.bulkCreate(reviewdata);
 
 module.exports = seedReviews;

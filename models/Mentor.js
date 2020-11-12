@@ -36,7 +36,7 @@ Mentor.init(
         language_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'languages',
+                model: 'language',
                 keys: 'id'
             }
         },

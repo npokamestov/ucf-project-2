@@ -1,6 +1,6 @@
 const { Language } = require('../models');
 
-const languageData = [
+const languagedata = [
     {
         language: 'Spanish'
     },
@@ -21,6 +21,6 @@ const languageData = [
     }
 ];
 
-const seedLanguages = () => Language.bulkCreate(languageData);
+const seedLanguages = () => Language.bulkCreate(languagedata);
 
-module.exorts = seedLanguages;
+module.exports = seedLanguages;

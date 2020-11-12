@@ -18,13 +18,13 @@ Language.init(
                 len: [3]
             }
         },
-        mentor_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'mentor',
-                key: 'id'
-            }
-        }
+        // mentor_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'mentor',
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         sequelize,

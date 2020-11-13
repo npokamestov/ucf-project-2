@@ -3,6 +3,8 @@ const Mentor = require('./Mentor');
 const Language = require('./Language');
 const Review = require('./Review');
 const Rate = require('./Rate');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 User.hasMany(Review, {
     foreignKey: 'user_id'
@@ -10,6 +12,34 @@ User.hasMany(Review, {
 
 User.hasMany(Rate, {
     foreignKey: 'user_id'
+});
+
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+});
+
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
+    onDelete: 'SET NULL'
+});
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
 });
 
 Review.belongsTo(User, {
@@ -53,4 +83,12 @@ Mentor.belongsToMany(User, {
     onDelete: 'SET NULL'
 });
 
-module.exports = { User, Mentor, Language, Review, Rate };
+module.exports = { 
+    User, 
+    Mentor, 
+    Language, 
+    Review, 
+    Rate, 
+    Comment, 
+    Post 
+};

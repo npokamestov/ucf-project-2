@@ -15,7 +15,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background: var(--light-color);
+	background: black;
 	margin: 20px;
 }
 
@@ -34,9 +34,30 @@ a {
 	color: var(--dark-color-a);
 	border: 0;
     font-size: 17px;
-    border-radius: 5px;
+    border-radius: 7px;
+    z-index: 1;
+    overflow: hidden;
 }
 
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+
+    transform: scale(1.5);
+}
+
+.btn:hover::before,
+.btn:focus::before {
+    transform: scale(0)
+}
 
 /* Chat Page */
 
@@ -52,7 +73,6 @@ a {
 	color: #fff;
 	border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom: 5px;
 	padding: 15px;
 	display: flex;
 	align-items: center;
@@ -114,7 +134,8 @@ a {
 
 .chat-form-container {
 	padding: 20px 30px;
-	background-color: var(--dark-color-a);
+    background-color: var(--dark-color-a);
+    border-bottom: 5px;
 }
 
 .chat-form-container form {

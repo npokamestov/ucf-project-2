@@ -1,0 +1,9 @@
+<ul class="post-list list-group">
+    {{#each posts as |post|}}
+    
+    <li class='list-item  pointer' onclick="window.location.href='/blog/post/{{id}}'">
+        {{> post-info post }}
+    </li>
+
+    {{/each}}
+</ul>

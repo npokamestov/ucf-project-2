@@ -1,6 +1,11 @@
 const path = require('path');
-const http = require('http');
 const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+require('dotenv').config;
+
+// for chat app
+const http = require('http');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/message');
 const {
@@ -10,10 +15,10 @@ const {
   getRoomUsers
 } = require('./utils/user');
 
-const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// socket.io
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -70,6 +75,43 @@ io.on('connection', socket => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+const app = express();
+const PORT = process.env.PORT || 3307;
+
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(
+    session.Store
+);
+
+const sess = {
+    secret: process.env.DB_SESSION_SECRET,
+    cookie: { maxAge: 9000000 },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
+app.use(session(sess));
+
+const helpers = require('./utils/helpers');
+
+const hbs = exphbs.create({ helpers });
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(require('./controllers/'));
+
+sequelize.sync({ force: true }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+});

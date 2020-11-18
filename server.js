@@ -10,6 +10,15 @@ const {
   getRoomUsers
 } = require('./utils/user');
 
+// bad words filter
+const Filter = require('bad-words'),
+      filter = new Filter();
+
+const words = require("./extra-words.json");
+filter.addWords(...words);
+
+console.log(filter.clean("Don't be an asshole"));
+
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);

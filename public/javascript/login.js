@@ -17,18 +17,18 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/DASHBOARD');
+            document.location.replace('/USER-DASHBOARD');
         }
         else {
             alert(response.statusText);
         }
     }
-}
+};
 
 function signupLinkFormHandler(event) {
     event.preventDefault();
     window.location.replace('/SIGNUP');
-}
+};
 
 document.querySelector('.LOGIN-FORM').addEventListener('SUBMIT', loginFormHandler);
 

@@ -39,6 +39,21 @@ a {
     overflow: hidden;
 }
 
+.btn1 {
+    cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+    font-size: 17px;
+    border-radius: 7px;
+}
+
+.btn1:hover {
+    background-color: blue;
+    color: white;
+}
+
 .btn::before {
     content: '';
     position: absolute;

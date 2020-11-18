@@ -86,6 +86,8 @@ const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+
+// Nikitk code
 // const app = express();
 // const PORT = process.env.PORT || 3307;
 
@@ -119,6 +121,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
-});
+// sequelize.sync({ force: true }).then(() => {
+//     app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+// });

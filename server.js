@@ -57,6 +57,9 @@ io.on('connection', socket => {
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
 
+    if(filter.isProfane(msg, username)) {
+       return io.to(user.room).emit('message', formatMessage(user.username, '*Profanity*'));
+    }
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 

@@ -4,6 +4,13 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 require('dotenv').config;
 
+// bad words filter
+const Filter = require('bad-words'),
+      filter = new Filter();
+
+
+const app = express();
+
 // for chat app
 const http = require('http');
 const socketio = require('socket.io');
@@ -75,12 +82,12 @@ io.on('connection', socket => {
   });
 });
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-const app = express();
-const PORT = process.env.PORT || 3307;
+// const app = express();
+// const PORT = process.env.PORT || 3307;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(

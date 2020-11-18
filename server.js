@@ -8,6 +8,11 @@ require('dotenv').config;
 const Filter = require('bad-words'),
       filter = new Filter();
 
+const words = require("./extra-words.json");
+filter.addWords(...words);
+
+console.log(filter.clean("Don't be an asshole"));
+
 
 const app = express();
 
@@ -59,6 +64,11 @@ io.on('connection', socket => {
   // Listen for chatMessage
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
+
+    if (filter.isProfane(msg)) {
+        return io.to(user.room).emit('message', formatMessage(user.username, '*Profanity*'));
+     }
+     io.to(user.room).emit('message', formatMessage(user.username, msg));
 
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });

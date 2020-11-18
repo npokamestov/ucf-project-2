@@ -36,7 +36,7 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit('message', formatMessage(botName, 'Welcome to LangMentor!'));
 
     // Broadcast when a user connects
     socket.broadcast
@@ -57,7 +57,7 @@ io.on('connection', socket => {
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
 
-    if(filter.isProfane(msg, username)) {
+    if (filter.isProfane(msg)) {
        return io.to(user.room).emit('message', formatMessage(user.username, '*Profanity*'));
     }
     io.to(user.room).emit('message', formatMessage(user.username, msg));

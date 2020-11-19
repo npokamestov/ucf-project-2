@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 require('dotenv').config;
 
+const translate = require('@vitalets/google-translate-api');
+
 // bad words filter
 const Filter = require('bad-words'),
       filter = new Filter();
@@ -15,6 +17,20 @@ console.log(filter.clean("Don't be an asshole"));
 
 
 const app = express();
+
+// Translator
+translate('I speek Dutch!', {from: 'en', to: 'nl'}).then(res => {
+  console.log(res.text);
+  //=> Ik spreek Nederlands!
+  console.log(res.from.text.autoCorrected);
+  //=> true
+  console.log(res.from.text.value);
+  //=> I [speak] Dutch!
+  console.log(res.from.text.didYouMean);
+  //=> false
+}).catch(err => {
+  console.error(err);
+});
 
 // for chat app
 const http = require('http');
@@ -34,7 +50,7 @@ const io = socketio(server);
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'LangMentor Chat';
 
 // Run when client connects
 io.on('connection', socket => {
@@ -126,10 +142,10 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
-});
+// sequelize.sync({ force: true }).then(() => {
+//     app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+// });
+

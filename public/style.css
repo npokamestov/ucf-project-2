@@ -13,6 +13,8 @@
 	font-family: 'Sansita Swashed', cursive;
 }
 
+
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
@@ -26,6 +28,14 @@ ul {
 
 a {
 	text-decoration: none;
+}
+
+.header1 {
+	letter-spacing: 8px;
+}
+
+.header2 {
+	letter-spacing: 8px;
 }
 
 .btn {
@@ -75,6 +85,50 @@ a {
     transform: scale(0)
 }
 
+/* modal */
+.modal-bg {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.6s;
+}
+
+.bg-active {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+.modal {
+	position: relative;
+	background-color: white;
+	width: 40%;
+	height: 60%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	border: solid black;
+	border-radius: 8px;
+}
+
+.modal-close {
+	color: black;
+	/* position: absolute; */
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
 /* Chat Page */
 
 .chat-container {
@@ -87,8 +141,6 @@ a {
 .chat-header {
 	background: var(--dark-color-a);
 	border: solid var(--light-color);
-	border-top-left-radius: 7px;
-	border-radius: 7px;
 	color: #fff;
 	padding: 15px;
 	display: flex;
@@ -152,7 +204,7 @@ a {
 .chat-form-container {
 	padding: 20px 30px;
     background-color: var(--dark-color-a);
-    border-bottom: 5px;
+    border: solid var(--light-color);
 }
 
 .chat-form-container form {
@@ -164,6 +216,12 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+}
+
+/* text to speech */
+textarea {
+	height: 5%;
+	width: 30%;
 }
 
 /* Join Page */
@@ -212,6 +270,15 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+}
+
+/* nav btn */
+.zoom-link {
+	margin-left: 30px;
+}
+
+.modal-btn {
+	margin-left: 420px;
 }
 
 .join-main .btn {

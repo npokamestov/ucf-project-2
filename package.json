@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/JonathanSaunders98/ucf-project-2#readme",
   "dependencies": {
+    "@vitalets/google-translate-api": "^4.0.0",
     "bad-words": "^3.0.4",
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

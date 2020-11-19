@@ -13,6 +13,8 @@
 	font-family: 'Sansita Swashed', cursive;
 }
 
+
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
@@ -26,6 +28,14 @@ ul {
 
 a {
 	text-decoration: none;
+}
+
+.header1 {
+	letter-spacing: 8px;
+}
+
+.header2 {
+	letter-spacing: 8px;
 }
 
 .btn {
@@ -87,8 +97,6 @@ a {
 .chat-header {
 	background: var(--dark-color-a);
 	border: solid var(--light-color);
-	border-top-left-radius: 7px;
-	border-radius: 7px;
 	color: #fff;
 	padding: 15px;
 	display: flex;
@@ -152,7 +160,7 @@ a {
 .chat-form-container {
 	padding: 20px 30px;
     background-color: var(--dark-color-a);
-    border-bottom: 5px;
+    border: solid var(--light-color);
 }
 
 .chat-form-container form {
@@ -212,6 +220,10 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+}
+
+.zoom-link {
+	margin-left: 540px;
 }
 
 .join-main .btn {

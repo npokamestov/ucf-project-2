@@ -2,21 +2,4 @@
     <div class='title'>
         {{language}}
     </div>
-    <div class='mentor-list'>
-        <ul class='mentor-list list-group'>
-            {{#each mentors as |mentor| }}
-
-            <li class='list-item pointer' onclick='window.location.href="/mentors/{{id}}"'>
-            {{> mentor-info mentor }}
-            </li>
-
-            {{/each}}
-        </ul>
-    </div>
-    {{!-- <div class='review-list'>
-        {{review}}
-        <div class='meta'>
-            <a href='/mentor/{{id}}' class='a-second'>{{reviews.length}} {{format_plural "review" reviews.length}}</a>
-        </div>
-    </div> --}}
 </article>

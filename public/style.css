@@ -10,6 +10,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Sansita Swashed', cursive;
 }
 
 body {
@@ -64,7 +65,7 @@ a {
     z-index: -1;
     background-color: var(--light-color);
     border-radius: 50%;
-    transition: transform 500ms ease-in-out;
+    transition: transform 800ms ease-in-out;
 
     transform: scale(1.5);
 }
@@ -85,9 +86,10 @@ a {
 
 .chat-header {
 	background: var(--dark-color-a);
+	border: solid var(--light-color);
+	border-top-left-radius: 7px;
+	border-radius: 7px;
 	color: #fff;
-	border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 	padding: 15px;
 	display: flex;
 	align-items: center;

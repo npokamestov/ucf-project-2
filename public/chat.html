@@ -15,10 +15,11 @@
     <title>LangMentor</title>
   </head>
   <body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <div class="chat-container">
       <header class="chat-header">
         <h1>LangMentor</h1>
-        <button class="btn1 zoom-link"><a href="https://zoom.us/signin" a>Zoom meeting</button>
+        <button class="btn1 zoom-link"><a href="https://zoom.us/signin" target="_blank" a>Zoom meeting</button>
         <a href="index.html" class="btn1">Leave Mentors Room</a>
       </header>
       <main class="chat-main">
@@ -41,14 +42,22 @@
           />
           <button class="btn1"><img src="https://img.icons8.com/fluent/48/000000/send-mass-email.png"/> Send</button>
         </form>
+          <textarea placeholder="Text to speech/Try it out!" id="txt" cols="10" rows="10"></textarea>
+          <input class="btn1" onclick="speakText()" type="button" value="submit">
       </div>
     </div>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
       integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
       crossorigin="anonymous"
     ></script>
+    <script>
+      function speakText(){
+          var text = document.getElementById('txt').value;
+          responsiveVoice.speak(text);
+          
+      }
+    </script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/main.js"></script>
   </body>

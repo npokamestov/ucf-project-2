@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangMentor</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="hero">
+            <nav>
+                {{#if loggedIn}}
+                <button class="btn nav-button pointer" onclick="window.location.href='/dashboard'">Dashboard</button>
+                <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
+                <button class="btn nav-button pointer" id="logout" class="btn-no-style" onclick="window.location.href='/'">Logout</button>
+                {{else}}
+                <button class="btn nav-button pointer" onclick="window.location.href='/login'">Login</button>
+                <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
+                {{/if}}
+            </nav>
+            <h1 class="app-title">
+                <a href="/">LangMentor</a>
+            </h1>
+        </header>
+
+        <main class="flex-row justify-space-between">
+        {{{ body }}}
+        </main>
+    </div>
+    
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

@@ -228,8 +228,13 @@ textarea {
 	width: 100%;
 }
 
+/* nav btn */
 .zoom-link {
-	margin-left: 540px;
+	margin-left: 30px;
+}
+
+.modal-btn {
+	margin-left: 420px;
 }
 
 .join-main .btn {

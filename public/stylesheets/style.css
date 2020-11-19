@@ -56,6 +56,10 @@ nav {
   justify-content: space-between;
 }
 
+.testimonial {
+  background-color: #66FCF1;
+}
+
 .comment {
   padding: 1%;
   margin-bottom: 1%;

@@ -2,39 +2,54 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title>LangMentor</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+
 </head>
 
-<body>
-    <div class="wrapper">
+<body class="bg-dark" style="margin: 0px;">
 
-        <header class="hero">
-            <nav>
-                {{#if loggedIn}}
-                <button class="btn nav-button pointer" onclick="window.location.href='/dashboard'">Dashboard</button>
-                <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
-                <button class="btn nav-button pointer" id="logout" class="btn-no-style" onclick="window.location.href='/'">Logout</button>
-                {{else}}
-                <button class="btn nav-button pointer" onclick="window.location.href='/login'">Login</button>
-                <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
-                {{/if}}
-            </nav>
-            <h1 class="app-title">
-                <a href="/">LangMentor</a>
-            </h1>
-        </header>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top scrolling-navbar testimonial">
+            <div class="container">
+                <a class="navbar-brand text-dark" href="/">
+                    <strong>LangMentor</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <main class="flex-row justify-space-between">
-        {{{ body }}}
-        </main>
-    </div>
-    
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/#languages">Languages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="chat-home.html">Chat (updated)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/blog">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+{{{ body }}}
+
+
+
 </body>
 
 </html>

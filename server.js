@@ -44,7 +44,7 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit('message', formatMessage(botName, 'Welcome to LangMentor!'));
 
     // Broadcast when a user connects
     socket.broadcast
@@ -68,8 +68,7 @@ io.on('connection', socket => {
     if (filter.isProfane(msg)) {
         return io.to(user.room).emit('message', formatMessage(user.username, '*Profanity*'));
      }
-     io.to(user.room).emit('message', formatMessage(user.username, msg));
-
+    
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 

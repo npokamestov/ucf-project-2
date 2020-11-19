@@ -1,15 +1,30 @@
-const router = require('express');
-// const sequelize = require('../config/connection');
+const router = require('express').Router();
+// const { request } = require('express');
+const sequelize = require('../config/connection');
 const { Language, Mentor, Review, Rate, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all languages for homepage
 router.get('/', (req,res) => {
-    Language.findAll({})
+    Language.findAll({
+        // attributes: [
+        //     'id',
+        //     'language'
+        // ],
+        // include: [
+        //     {
+        //         model: Mentor,
+        //         attributes: ['first_name', 'last_name']
+        //     }
+        // ]
+    })
     .then((dbLanguageData) => {
-        const languages = dbLanguageData.map((language) => languauge.get({ plain:true }));
+        const languages = dbLanguageData.map(language => language.get({ plain:true }));
 
-        res.render('all-languages', { languages });
+        res.render('homepage', {
+            languages,
+            loggedIn: req.session.loggedIn
+        });
     })
     .catch((err) => {
         res.status(500).json(err);
@@ -17,16 +32,27 @@ router.get('/', (req,res) => {
 });
 
 // get a single language with associated mentors
-router.get('/language/:id', (req,res) => {
-    Language.findByPk(req.params.id, {
+router.get('/languages/:id', (req,res) => {
+    Language.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'language'
+        ],
         include: [
-            Mentor,
             {
-                model: Review,
-                include: [User],
-            },
-            {
-                model: Rate
+                model: Mentor,
+                attributes: ['email'],
+                include: {
+                    model: Review,
+                    attributes: ['review_text'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                }
             }
         ],
     })
@@ -46,7 +72,7 @@ router.get('/language/:id', (req,res) => {
 });
 
 router.get('/login', (req, res) => {
-    if(res.session.loggedIn) {
+    if(req.session.loggedIn) {
         res.direct('/');
         return;
     }

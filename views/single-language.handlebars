@@ -1,0 +1,21 @@
+{{> language-info language}}
+
+{{#if loggedIn}}
+<form class='review-form card-body'>
+    <div>
+        <textarea name="review-body"></textarea>
+    </div>
+
+    <div>
+        <button class='btn pointer' type='submit'>add review</button>
+    </div>
+</form>
+{{/if}}
+
+{{mentor}}
+
+{{> reviews mentor.review}}
+
+{{#if loggedIn}}
+<script src='/javascript/review,js'></script>
+{{/if}}

@@ -9,16 +9,16 @@ const seedComments = require('./comment-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     console.log('--------------');
 
     await seedLanguages();
     console.log('--------------');
 
-    await seedUsers();
+    await seedMentors();
     console.log('--------------');
 
-    await seedMentors();
+    await seedUsers();
     console.log('--------------');
 
     await seedReviews();

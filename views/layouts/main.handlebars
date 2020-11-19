@@ -14,10 +14,11 @@
         <header class="hero">
             <nav>
                 {{#if loggedIn}}
-                <button class="btn nav-button pointer" onclick="window.location.href='/user-dashboard'">User Dashboard</button>
+                <button class="btn nav-button pointer" onclick="window.location.href='/dashboard'">Dashboard</button>
+                <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
                 <button class="btn nav-button pointer" id="logout" class="btn-no-style" onclick="window.location.href='/'">Logout</button>
                 {{else}}
-                <button class="btn nav-button pointer" onclick="window.location.href='/login'">User Login</button>
+                <button class="btn nav-button pointer" onclick="window.location.href='/login'">Login</button>
                 <button class="btn nav-button poitner" onclick="window.location.href='/blog'">Blog</button>
                 {{/if}}
             </nav>

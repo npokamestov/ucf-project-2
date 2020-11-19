@@ -15,7 +15,7 @@
 <body class="bg-dark" style="margin: 0px;">
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top scrolling-navbar testimonial">
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-center nav-fill testimonial">
             <div class="container">
                 <a class="navbar-brand text-dark" href="#">
                     <strong>LangMentor</strong>
@@ -26,10 +26,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#languages">Languages</a>
-                        </li>
+                    <ul class="nav nav-tabs mx-auto">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="chat-home.html">Chat</a>
                         </li>
@@ -38,6 +35,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="#">Mentors</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark" href="#languages">Languages</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-danger active" href="#">Sign in</a>
                         </li>
                     </ul>
                 </div>
@@ -137,18 +140,16 @@
     </div>
 
     <div class="container" id="languages">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="row no-gutters border rounded overflow-hidden flex-right mb-4 shadow-sm h-md-250">
             <div class="col p-4 d-flex flex-column position-static"
                 style="background-image: url('https://images.unsplash.com/photo-1563711246253-b4af863acbd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-                <div class="col-md-6 col-xl-5 mb-4">
-                    <div class="card wow fadeInRight bg-dark">
-                        <div class="card-body">
-                            <h3 class="text-center text-white">Languages we offer:</h3>
-                            <h4 class="text-center text-white">English</h4>
-                            <h4 class="text-center text-white">Spanish</h4>
-                            <h4 class="text-center text-white">French</h4>
-                            <h4 class="text-center text-white">German</h4>
-                        </div>
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <h3 class="text-center text-white">Languages we offer:</h3>
+                        <h4 class="text-center text-white">English</h4>
+                        <h4 class="text-center text-white">Spanish</h4>
+                        <h4 class="text-center text-white">French</h4>
+                        <h4 class="text-center text-white">German</h4>
                     </div>
                 </div>
             </div>

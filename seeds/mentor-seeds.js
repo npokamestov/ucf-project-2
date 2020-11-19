@@ -36,8 +36,7 @@ const mentordata = [
         last_name: 'Mcmahon',
         email: 'steve@comcast.net',
         language_id: 6
-    },
-
+    }
 ];
 
 const seedMentors = () => Mentor.bulkCreate(mentordata);

@@ -1,0 +1,14 @@
+<div class="languages">
+    {{#each languages}}
+    <article class="card">
+        <div class="card-header flex-row justify-space-between">
+            <h2>
+                <a href="/language/{{id}}">{{language}}</a>
+            </h2>
+        </div>
+            <div class="card-body">
+                {{body}}
+            </div>
+    </article>
+    {{/each}}
+</div>

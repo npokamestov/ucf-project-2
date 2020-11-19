@@ -144,5 +144,5 @@ io.on('connection', socket => {
 
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+    server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });

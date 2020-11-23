@@ -17,7 +17,10 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            response.json().then(function (data) {
+                console.log(data)
+            })
+            document.location.replace('/');
         }
         else {
             alert(response.statusText);

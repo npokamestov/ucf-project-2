@@ -2,7 +2,7 @@ const router = require('express').Router();
 // const { request } = require('express');
 const sequelize = require('../config/connection');
 const { Language, Mentor, Review, Rate, User } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 // get all languages for homepage
 // router.get('/', (req,res) => {
@@ -72,24 +72,35 @@ const withAuth = require('../utils/auth');
 // });
 
 router.get('/', (req, res) => {
-    if(req.session.loggedIn) {
-        res.direct('/');
-        return;
-    }
-    res.render('homepage');
+    console.log(req.session)
+    // if(req.session.loggedIn) {
+    //     res.redirect('/home');
+    //     return;
+    // }
+    res.render('homepage', {
+        loggedIn: req.session.loggedIn
+    });
 })
 
-router.get('/chat', (req, res) => {
-    if(req.session.loggedIn) {
-        res.direct('/');
-        return;
-    }
-    res.render('chat-homepage');
-})
+// router.get('/chat', (req, res) => {
+//     if(req.session.loggedIn) {
+//         res.direct('/');
+//         return;
+//     }
+//     res.render('homepage');
+// })
+
+// router.get('/home', (req, res) => {
+//     // if(!req.session.loggedIn) {
+//     //     res.redirect('/');
+//     //     return;
+//     // }
+//     res.render('homepage-loggedin')
+// })
 
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
-        res.direct('/');
+        res.redirect('/');
         return;
     }
 

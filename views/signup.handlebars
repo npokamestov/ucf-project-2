@@ -1,14 +1,37 @@
-<form class="signup-form card-body">
-    <div>
-        <label class="form-label" for="username-signup">Username:</label>
-        <input type="text" id="username-signup" />
+<form class="card-body signup-form" >
+    <!--Header-->
+    <div class="text-center" id="register">
+        <h3 class="text-white">
+            <i class="fas fa-user"></i> Register:</h3>
+        <hr class="hr-light">
     </div>
-    <div>
-        <label class="form-label" for="password-signup">Password:</label>
-        <input type="password" id="password-signup" />
+    <!--Body-->
+    <div class="md-form">
+        <i class="fas fa-user prefixactive"></i>
+        <label for="form3" class="active text-white">First Name</label>
+        <input type="text" id="firstname-signup" class="form-control">
+        
     </div>
-    <div>
-        <button class="btn pointer" type="submit">Signup</button>
+    <div class="md-form">
+        <i class="fas fa-user prefixactive"></i>
+        <label for="form3" class="active text-white">Last Name</label>
+        <input type="text" id="lastname-signup" class="form-control">
+        
+    </div>
+    <div class="md-form">
+        <i class="fas fa-envelope prefix active"></i>
+        <label for="form2" class="active text-white">Username</label>
+        <input type="text" id="username-signup" class="form-control">
+        
+    </div>
+    <div class="md-form">
+        <i class="fas fa-lock prefix active"></i>
+        <label for="form4" class="text-white">Password</label>
+        <input type="password" id="password-signup" class="form-control">
+        
+    </div>
+    <div class="text-center mt-4">
+        <button class="btn btn-indigo" type="submit">Sign up</button>
     </div>
 </form>
 

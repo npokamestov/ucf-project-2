@@ -120,7 +120,7 @@
     <footer class="page-footer font-small testimonial pt-4">
         <div class="container">
 
-
+            {{#unless loggedIn}}
             <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item">
                     <h5 class="mb-1">Register for free</h5>
@@ -129,6 +129,7 @@
                     <a href="/signup" class="btn btn-outline-white btn-rounded">Sign up!</a>
                 </li>
             </ul>
+            {{/unless}}
 
         </div>
         <div class="footer-copyright text-center py-3">Made with:
@@ -138,4 +139,6 @@
 
     </footer>
 
+{{#unless loggedIn}}
 <script src="/javascript/signup.js"></script>
+{{/unless}}

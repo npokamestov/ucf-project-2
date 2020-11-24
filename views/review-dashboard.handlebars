@@ -1,0 +1,36 @@
+{{!-- <section style="color:white">
+    <h2 style="color:white">Create New Post</h2>
+
+    <form class="new-post-form card-body">
+        <div>
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label for="post-content">Content</label>
+            <textarea class="form-textarea" type="text" id="post-content" name="post-content"></textarea>
+        </div>
+        <button type="submit" class="btn pointer">Create</button>
+    </form>
+</section> --}}
+
+<a style="color:white" href="/dashboard"> &larr; Back to dashboard</a>
+{{#if reviews.length}}
+<section style="color:white">
+    <h2 style="color:white">Your Reviews</h2>
+    <ul>
+        {{#each reviews as |review|}}
+        <li>
+            
+            <h3 style='color:white'>{{mentor.first_name}} {{mentor.last_name}} "{{mentor.language.language}}"</h3>
+            
+            
+            {{review_text}}<br>
+            <a style="color:white" href="/dashboard/edit/review/{{review.id}}" class="edit-link">Edit review</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+{{!-- <script src="/javascript/add-review.js"></script> --}}

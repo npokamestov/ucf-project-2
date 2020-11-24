@@ -1,5 +1,5 @@
-<section>
-    <h2>Create New Post</h2>
+<section style="color:white">
+    <h2 style="color:white">Create New Post</h2>
 
     <form class="new-post-form card-body">
         <div>
@@ -14,14 +14,18 @@
     </form>
 </section>
 
+<h2>
+    <a style="color:white" href='/dashboard/reviews'>Your Mentor Reviews</a>
+</h2>
+
 {{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
+<section style="color:white">
+    <h2 style="color:white">Your Posts</h2>
     <ol>
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a style="color:white" href="/dashboard/edit/post/{{post.id}}" class="edit-link">Edit post</a>
         </li>
         {{/each}}
     </ol>

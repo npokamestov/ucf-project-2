@@ -1,5 +1,13 @@
-<article class='mentor'>
-    <div class='title'>
-        {{mentor}}
+{{#each mentor}}
+<article class="mentor">
+    <div class="title">
+        {{first_name}}{{last_name}}{{language_id}}
+    </div>
+    <div class="content">
+        <a href="mailto:{{email}}">{{email}}</a>
+    </div>
+    <div class="meta">
+        <a href="/api/reviews/{{id}}" class="a-second">{{mentor.reviews.length}} {{format_plural "review" reviewss.length}}</a>
     </div>
 </article>
+{{/each}}

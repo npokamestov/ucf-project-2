@@ -68,10 +68,6 @@ const {
 const server = http.createServer(app);
 const io = socketio(server);
 
-// socket.io
-// Set static folder
-// app.use(express.static(path.join(__dirname, 'public')));
-
 const botName = 'ChatCord Bot';
 
 // Run when client connects
@@ -128,20 +124,6 @@ io.on('connection', socket => {
     }
   });
 });
-
-
-
-// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-// Nikitk code
-// const app = express();
-// const PORT = process.env.PORT || 3307;
-
-
-
-
-
 
 sequelize.sync({ force: false }).then(() => {
     server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

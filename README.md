@@ -96,7 +96,7 @@ n/a
 
 ## Link
 
-[Heroku Link](https://stormy-meadow-54052.herokuapp.com/)
+[Heroku Link](https://.herokuapp.com/)
 
 ## Questions?
 

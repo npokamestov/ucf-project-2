@@ -96,7 +96,7 @@ n/a
 
 ## Link
 
-[Heroku Link](https://.herokuapp.com/)
+[Heroku Link](https://langmentor-ucf.herokuapp.com/index.html)
 
 ## Questions?
 

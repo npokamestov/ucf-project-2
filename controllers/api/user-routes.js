@@ -50,12 +50,16 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // expects {username: 'Lernantino', password: 'password1234'}
     User.create({
+        first_name: req.body.firstname,
+        last_name: req.body.lastname,
         username: req.body.username,
         password: req.body.password
     })
     .then(dbUserData => {
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
+            req.session.firstname = dbUserData.first_name;
+            req.session.lastname = dbUserData.last_name;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
@@ -77,7 +81,7 @@ router.post('/login', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that email address!' });
+            res.status(400).json({ message: 'No user with that username!' });
             return;
         }
 

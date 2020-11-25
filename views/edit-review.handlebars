@@ -1,0 +1,20 @@
+<article style="color:white">
+    <a style="color:white" href="/dashboard/reviews"> &larr; Back to  reviews dashboard</a>
+    <h2 style="color:white">
+        Edit Review
+    </h2>
+    <form class="edit-review-form card-body">
+        <div>
+            <h4 style="color:white">{{review.mentor.first_name}} {{review.mentor.last_name}} "{{review.mentor.language.language}}"</h4>
+            <textarea name="review-text">{{review.review_text}}</textarea>
+        </div>
+        <div>
+            <a style="color:white" href="/api/mentors/{{review.mentor.id}}">{{reviews.length}} {{format_plural "review" reviews.length}}</a>
+        </div>
+        <button type="submit" class="pointer">Update Review</button>
+        <button type="button" class="delete-review-btn pointer">Delete Review</button>
+    </form>
+</article>
+
+<script src="/javascript/edit-review.js"></script>
+<script src="/javascript/delete-review.js"></script>

@@ -1,0 +1,15 @@
+<a style="color:white" href="/dashboard"> &larr; Back to dashboard</a>
+{{#if reviews.length}}
+<section style="color:white">
+    <h2 style="color:white">Your Reviews</h2>
+    <ul>
+        {{#each reviews as |review|}}
+        <li>
+            <h3 style='color:white'>{{mentor.first_name}} {{mentor.last_name}} "{{mentor.language.language}}"</h3>
+            {{review_text}}<br>
+            <a style="color:white" href="/dashboard/edit/review/{{review.id}}" class="edit-link">Edit review</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}

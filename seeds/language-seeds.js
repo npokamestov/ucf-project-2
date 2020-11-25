@@ -2,22 +2,22 @@ const { Language } = require('../models');
 
 const languagedata = [
     {
+        language: 'English'
+    },
+    {
         language: 'Spanish'
     },
     {
         language: 'French'
     },
     {
+        language: 'Swedish'
+    },
+    {
         language: 'German'
     },
     {
-        language: 'English'
-    },
-    {
-        language: 'Arabic'
-    },
-    {
-        language: 'Mandarin'
+        language: 'Russian'
     }
 ];
 

@@ -1,5 +1,5 @@
-<div class="reviews">
-    {{#each this}}
+<div class="reviews" style="color:white">
+    {{#each mentor.reviews}}
     <section class="review">
         <div class="meta">
             {{user.username}} on {{format_date created_at}}
@@ -10,3 +10,18 @@
     </section>
     {{/each}}
 </div>
+
+{{#if loggedIn}}
+<form class='review-form card-body'>
+    <div>
+        <textarea name="review-body"></textarea>
+    </div>
+    <div>
+        <button class='btn pointer' type='submit'>add review</button>
+    </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src='/javascript/review.js'></script>
+{{/if}}

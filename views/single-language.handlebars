@@ -1,31 +1,8 @@
-{{> language-info language}}
+<h2 style="color: white">{{language.language}}</h2>
 
-{{#if loggedIn}}
-<form class='review-form card-body'>
-    <div>
-        <textarea name="review-body"></textarea>
-    </div>
-
-    <div>
-        <button class='btn pointer' type='submit'>add review</button>
-    </div>
-</form>
-{{/if}}
-
-<div class='mentor-list'>
-        <ul class='mentor-list list-group'>
-
-            {{#each mentors as |mentor|}}
-            <li class='list-item pointer' onclick='window.location.href="/api/mentors/{{id}}"'>
-            {{>mentor-info mentor}}
-            </li>
-            {{/each}}
-
-        </ul>
-</div>
-
-{{> reviews mentor.review}}
-
-{{#if loggedIn}}
-<script src='/javascript/review,js'></script>
-{{/if}}
+<h3 style="color: white">Mentors:</h3>
+{{#each language.mentors}}
+    <h4 style="color: white">
+        <a style="color: white" href="/api/mentors/{{id}}">{{first_name}} {{last_name}}</a>
+    </h4>
+{{/each}}

@@ -1,16 +1,17 @@
 
 
-    <div class="jumbotron row mb-6 mx-auto"
+    <div class="jumbotron row mb-6 mx-auto justify-content-between"
         style="background-image: url('https://images.unsplash.com/photo-1593069832911-8d1ffe689530?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80'); background-repeat: no-repeat; background-size: cover; background-position: center center; width: 75%;">
         <div class="col-md-6 px-0 text-left">
             <h1 class="display-4 font-italic text-white">LangMentor! Find a tutor for you today.</h1>
             <p class="lead my-3 text-white">A place for anyone with a yearning for learning a new language to find a
                 mentor that fits their learning style and price range.</p>
         </div>
+        {{#unless loggedIn}}
         <div class="col-md-6 col-xl-5 mb-4">
             <!--Form-->
             <div class="card wow fadeInRight bg-dark">
-                <div class="card-body">
+                <form class="card-body signup-form" >
                     <!--Header-->
                     <div class="text-center" id="register">
                         <h3 class="text-white">
@@ -20,29 +21,35 @@
                     <!--Body-->
                     <div class="md-form">
                         <i class="fas fa-user prefixactive"></i>
-                        <input type="text" id="form3" class="form-control">
-                        <label for="form3" class="active text-white">Your name</label>
+                        <input type="text" id="firstname-signup" class="form-control">
+                        <label for="form3" class="active text-white">First Name</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fas fa-user prefixactive"></i>
+                        <input type="text" id="lastname-signup" class="form-control">
+                        <label for="form3" class="active text-white">Last Name</label>
                     </div>
                     <div class="md-form">
                         <i class="fas fa-envelope prefix active"></i>
-                        <input type="email" id="form2" class="form-control">
-                        <label for="form2" class="active  text-white">Your email</label>
+                        <input type="text" id="username-signup" class="form-control">
+                        <label for="form2" class="active  text-white">Username</label>
                     </div>
                     <div class="md-form">
                         <i class="fas fa-lock prefix active"></i>
-                        <input type="password" id="form4" class="form-control">
-                        <label for="form4" class="text-white">Your password</label>
+                        <input type="password" id="password-signup" class="form-control">
+                        <label for="form4" class="text-white">Password</label>
                     </div>
                     <div class="text-center mt-4">
-                        <button class="btn btn-indigo">Sign up</button>
+                        <button class="btn btn-indigo" type="submit">Sign up</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
+        {{/unless}}
     </div>
 
     <div class="container" id="testimonials">
-        <div class="row mb-2">
+        <div class="row mb-2 justify-content-between">
             <div class="col-md-6">
                 <div
                     class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -93,19 +100,20 @@
 
     <div class="container" id="languages">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
-            <div class="col p-4 d-flex flex-column position-static"
-                style="background-image: url('https://images.unsplash.com/photo-1563711246253-b4af863acbd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-                <div class="col-md-6 col-xl-5 mb-4">
-                    <div class="card wow fadeInRight bg-dark">
-                        <div class="card-body">
+            <div class="col p-4 d-flex flex-column position-static" style="background-image: url('https://images.unsplash.com/photo-1563711246253-b4af863acbd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                {{!-- <div class="col-md-6 col-xl-5 mb-4"> --}}
+                    <div class="card bg-dark">
+                        <div class="card-body" style='padding: 0'>
                             <h3 class="text-center text-white">Languages we offer:</h3>
                             <h4 class="text-center text-white">English</h4>
                             <h4 class="text-center text-white">Spanish</h4>
                             <h4 class="text-center text-white">French</h4>
+                            <h4 class="text-center text-white">Swedish</h4>
                             <h4 class="text-center text-white">German</h4>
+                            <h4 class="text-center text-white">Russian</h4>
                         </div>
                     </div>
-                </div>
+                {{!-- </div> --}}
             </div>
         </div>
     </div>
@@ -113,15 +121,16 @@
     <footer class="page-footer font-small testimonial pt-4">
         <div class="container">
 
-
+            {{#unless loggedIn}}
             <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item">
                     <h5 class="mb-1">Register for free</h5>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#register" class="btn btn-outline-white btn-rounded">Sign up!</a>
+                    <a href="/signup" class="btn btn-outline-white btn-rounded">Sign up!</a>
                 </li>
             </ul>
+            {{/unless}}
 
         </div>
         <div class="footer-copyright text-center py-3">Made with:
@@ -131,3 +140,6 @@
 
     </footer>
 
+{{#unless loggedIn}}
+<script src="/javascript/signup.js"></script>
+{{/unless}}

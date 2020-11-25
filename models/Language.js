@@ -17,14 +17,7 @@ Language.init(
             validate: {
                 len: [3]
             }
-        },
-        // mentor_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'mentor',
-        //         key: 'id'
-        //     }
-        // }
+        }
     },
     {
         sequelize,

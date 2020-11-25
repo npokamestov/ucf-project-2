@@ -4,7 +4,9 @@ const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Review.findAll()
+    Review.findAll({
+        order: [['created_at', 'DESC']],
+    })
         .then(dbReviewData => res.json(dbReviewData))
         .catch(err => {
             console.log(err);
@@ -23,6 +25,25 @@ router.post('/', withAuth, (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(400).json(err);
+    });
+});
+
+router.put('/:id', withAuth, (req, res) => {
+    Review.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbReviewData => {
+        if (!dbReviewData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(dbReviewData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 

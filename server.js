@@ -37,11 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-
-
-
-
-
 // bad words filter
 const Filter = require('bad-words'),
       filter = new Filter();
@@ -50,9 +45,6 @@ const words = require("./extra-words.json");
 filter.addWords(...words);
 
 console.log(filter.clean("Don't be an asshole"));
-
-
-
 
 // for chat app
 const http = require('http');
@@ -67,10 +59,6 @@ const {
 
 const server = http.createServer(app);
 const io = socketio(server);
-
-// socket.io
-// Set static folder
-// app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'ChatCord Bot';
 
@@ -128,20 +116,6 @@ io.on('connection', socket => {
     }
   });
 });
-
-
-
-// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-// Nikitk code
-// const app = express();
-// const PORT = process.env.PORT || 3307;
-
-
-
-
-
 
 sequelize.sync({ force: false }).then(() => {
     server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

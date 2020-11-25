@@ -11,29 +11,9 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'language'
-        ],
-        // include: [
-        //     {
-        //         model: Mentor,
-        //         attributes: ['id', 'first_name', 'last_name', 'email'],
-        //         include: {
-        //             model: Review,
-        //             attributes: ['review_text'],
-        //             include: {
-        //                 model: User,
-        //                 attributes: ['username']
-        //             }
-        //         }
-        //     },
-            // {
-            //     model: User,
-            //     attributes: ['username']
-            // }
-        // ]
+        ]
     })
     .then(dbLangData => {
-        // res.json(dbLangData)
-        // console.log(dbLangData)
         const languages = dbLangData.map(lang => lang.get({ plain:true}));
         res.render('all-languages', { languages, loggedIn:true })
     })
@@ -67,9 +47,6 @@ router.get('/:id', withAuth, (req, res) => {
     })
     .then(dbLangData => {
         if (dbLangData) {
-        
-            // res.json(dbLangData);
-            // console.log(dbLangData)
             const language = dbLangData.get({ plain:true });
             res.render('single-language', { 
                 language, 

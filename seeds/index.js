@@ -1,7 +1,6 @@
 const seedUsers = require('./user-seeds');
 const seedMentors = require('./mentor-seeds');
 const seedReviews = require('./review-seeds');
-const seedRates = require('./rate-seeds');
 const seedLanguages = require('./language-seeds');
 const seedPosts = require('./post-seeds');
 const seedComments = require('./comment-seeds');
@@ -22,9 +21,6 @@ const seedAll = async () => {
     console.log('--------------');
 
     await seedReviews();
-    console.log('--------------');
-
-    await seedRates();
     console.log('--------------');
 
     await seedPosts();

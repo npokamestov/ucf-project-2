@@ -1,39 +1,8 @@
-{{!-- {{> language-info language}} --}}
-
 <h2 style="color: white">{{language.language}}</h2>
 
 <h3 style="color: white">Mentors:</h3>
 {{#each language.mentors}}
-<h4 style="color: white">
-    <a style="color: white" href="/api/mentors/{{id}}">{{first_name}} {{last_name}}</a>
-</h4>
+    <h4 style="color: white">
+        <a style="color: white" href="/api/mentors/{{id}}">{{first_name}} {{last_name}}</a>
+    </h4>
 {{/each}}
-
-{{!-- <div class="mentors">
-    {{#each mentors as |mentor|}}
-    <article class="card">
-        <div class="card-header flex-row justify-space-between">
-            <h2>
-                <a href="/api/mentors/{{id}}">{{mentor}}</a>
-            </h2>
-        </div>
-            <div class="card-body">
-                {{body}}
-            </div>
-    </article>
-    {{/each}}
-</div> --}}
-
-{{!-- {{> mentor-info mentor}} --}}
-
-
-
-
-
-
-
-
-
-{{!-- {{> reviews mentor.review}} --}}
-{{!-- {{ review }} --}}
-

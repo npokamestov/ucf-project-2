@@ -1,5 +1,3 @@
-// const { Exception } = require("handlebars");
-
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -34,5 +32,4 @@ function signupLinkFormHandler(event) {
 };
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-
 document.querySelector('.login-form').addEventListener('button', signupLinkFormHandler);

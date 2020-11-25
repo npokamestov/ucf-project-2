@@ -49,7 +49,7 @@ To Install necessary dependencies, run the following commands:
 git clone git@github.com:JonathanSaunders98/ucf-project-2.git
 ```
 Create a `.env` file in the root directory with the following info
-> DB_NAME='ecommerce_db'
+> DB_NAME='langmentor_db'
 >
 > DB_USER='*your_username_here*'
 >

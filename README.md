@@ -37,6 +37,8 @@ Person to person language mentorship site that connects users with mentors fluen
 
 * [Tests](#tests)
 
+* [Tools](#tools)
+
 * [Questions](#questions)
 
 ## Installation
@@ -79,6 +81,18 @@ To run the tests, run the following command:
 ```
 n/a
 ```
+
+## Tools
+
+>1. Node.js
+>2. express.js
+>3. JavaScript
+>4. css/bootstrap
+>5. Handlebars
+>6. socket.io
+>7. mySQL
+>8. Sequelize
+>9. extra NPM packages moment, bcrypt, mySQL2, express-sessions.
 
 ## Link
 
